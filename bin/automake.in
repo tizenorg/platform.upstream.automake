@@ -7384,12 +7384,14 @@ sub required_file_check_or_copy
   my $fullfile = "$dir/$file";
   my $found_it = 0;
   my $dangling_sym = 0;
+  my $thisdir = dirname ($fullfile);
+  my $thisfile = basename ($fullfile);
 
   if (-l $fullfile && ! -f $fullfile)
     {
       $dangling_sym = 1;
     }
-  elsif (dir_has_case_matching_file ($dir, $file))
+  elsif (dir_has_case_matching_file ($thisdir, $thisfile))
     {
       $found_it = 1;
     }
