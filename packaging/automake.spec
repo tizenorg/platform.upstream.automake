@@ -47,6 +47,7 @@ rm -rf %{buildroot}%{_infodir}/dir
 
 
 %files
+%license COPYING
 %defattr(-,root,root)
 %doc %{_docdir}/%{name}
 %{_bindir}/*
