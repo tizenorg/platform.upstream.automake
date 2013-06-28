@@ -12,6 +12,7 @@ Group:          Development/Tools/Building
 Url:            http://www.gnu.org/software/automake
 Source:         automake-%{version}.tar.xz
 Source1:        automake-rpmlintrc
+Source1001: 	automake.manifest
 BuildArch:      noarch
 
 %description
@@ -22,6 +23,7 @@ definitions (with rules occasionally thrown in).  The generated
 
 %prep
 %setup -q -n automake-%{version}
+cp %{SOURCE1001} .
 
 %build
 sh bootstrap.sh
@@ -47,6 +49,7 @@ rm -rf %{buildroot}%{_infodir}/dir
 
 
 %files
+%manifest %{name}.manifest
 %license COPYING
 %defattr(-,root,root)
 %doc %{_docdir}/%{name}
