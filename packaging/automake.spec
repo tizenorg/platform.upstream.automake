@@ -2,14 +2,16 @@ Name:           automake
 BuildRequires:  autoconf >= 2.69
 BuildRequires:  bison
 BuildRequires:  gcc-c++
+BuildRequires:  makeinfo
 BuildRequires:  xz
 Requires:       autoconf >= 2.69
-Version:        1.12.1
+Version:        1.14.1
 Release:        0
 Summary:        A Program for Automatically Generating GNU-Style Makefile.in Files
 License:        GPL-2.0+
 Group:          Development/Tools/Building
 Url:            http://www.gnu.org/software/automake
+#X-Vc-Url:      git://git.savannah.gnu.org/automake.git
 Source:         automake-%{version}.tar.xz
 Source1:        automake-rpmlintrc
 Source1001: 	automake.manifest
@@ -60,4 +62,3 @@ rm -rf %{buildroot}%{_infodir}/dir
 %{_datadir}/automake-*
 %config /etc/aclocal_dirlist
 
-%changelog
