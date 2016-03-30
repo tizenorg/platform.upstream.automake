@@ -28,6 +28,9 @@ definitions (with rules occasionally thrown in).  The generated
 cp %{SOURCE1001} .
 
 %build
+export CFLAGS+=" -fvisibility=hidden"
+  export CXXFLAGS+=" -fvisibility=hidden"
+  
 sh bootstrap.sh
 %configure --docdir=%{_docdir}/%{name}
 make %{?_smp_mflags}
