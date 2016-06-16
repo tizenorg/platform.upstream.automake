@@ -90,7 +90,7 @@ setup_autotools_paths = { \
 
 # We depend on configure.ac so that we regenerate the tarball
 # whenever the Automake version changes.
-$(srcdir)/%D%/amhello-1.0.tar.gz: $(amhello_sources) $(srcdir)/configure.ac
+$(srcdir)/%D%/amhello-1.0.tar.gz: $(amhello_sources) $(srcdir)/configure.ac bin/aclocal
 	$(AM_V_GEN)tmp=amhello-output.tmp \
 	  && $(am__cd) $(srcdir)/%D%/amhello \
 	  && : Make our	aclocal and automake avaiable before system ones. \
